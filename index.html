@@ -3,6 +3,176 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Sign in | Hope ERP</title>
+    <link rel="stylesheet" href="hope-auth.css">
+    <script src="hope-auth.js" defer></script>
+  </head>
+  <body>
+    <div class="auth-layout">
+      <aside class="brand-panel">
+        <a class="brand" href="#" aria-label="Hope ERP home">
+          <span class="brand-mark" aria-hidden="true">h</span>
+          <span>hope<span class="brand-light">erp</span></span>
+        </a>
+
+        <div class="brand-message">
+          <span class="section-label">YOUR BUSINESS, IN SYNC</span>
+          <h1>Make room for<br>what matters.</h1>
+          <p>Bring your people, processes, and progress together in one clear view.</p>
+        </div>
+
+        <div class="dashboard-preview" aria-hidden="true">
+          <div class="preview-top">
+            <span class="preview-title">Business overview</span>
+            <span class="preview-period">This month <span class="chevron">⌄</span></span>
+          </div>
+          <div class="preview-metrics">
+            <div class="metric-card">
+              <span class="metric-label">Total revenue</span>
+              <strong>$84,290</strong>
+              <span class="metric-change"><span>↗</span> 12.8% <small>vs last month</small></span>
+            </div>
+            <div class="metric-card metric-card-soft">
+              <span class="metric-label">Open orders</span>
+              <strong>126</strong>
+              <span class="metric-subtext">Across 18 customers</span>
+            </div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-heading">
+              <span>Revenue overview</span>
+              <span class="chart-legend"><i></i> Revenue</span>
+            </div>
+            <div class="chart" aria-hidden="true">
+              <div class="chart-grid"></div>
+              <div class="chart-bars">
+                <i style="--bar-height: 34%"></i>
+                <i style="--bar-height: 47%"></i>
+                <i style="--bar-height: 40%"></i>
+                <i style="--bar-height: 62%"></i>
+                <i style="--bar-height: 55%"></i>
+                <i style="--bar-height: 76%"></i>
+                <i style="--bar-height: 68%"></i>
+                <i class="bar-highlight" style="--bar-height: 92%"></i>
+                <i style="--bar-height: 72%"></i>
+                <i style="--bar-height: 84%"></i>
+                <i style="--bar-height: 66%"></i>
+                <i style="--bar-height: 80%"></i>
+              </div>
+            </div>
+            <div class="chart-months"><span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span></div>
+          </div>
+          <div class="preview-footer">
+            <span class="avatar-stack"><i>J</i><i>M</i><i>A</i></span>
+            <span>Good work happens together.</span>
+            <span class="preview-sparkle" aria-hidden="true">✳</span>
+          </div>
+        </div>
+
+        <p class="brand-footer">A little more clarity. A lot more possibility.</p>
+      </aside>
+
+      <main class="auth-main">
+        <a class="brand mobile-brand" href="#" aria-label="Hope ERP home">
+          <span class="brand-mark" aria-hidden="true">h</span>
+          <span>hope<span class="brand-light">erp</span></span>
+        </a>
+
+        <div class="auth-content">
+          <div class="workspace-label"><span class="workspace-dot"></span> HOPE ERP WORKSPACE</div>
+
+          <section class="auth-panel" id="login-panel" aria-labelledby="login-title">
+            <header class="form-header">
+              <h2 id="login-title">Welcome back</h2>
+              <p>Sign in to pick up where you left off.</p>
+            </header>
+
+            <form id="login-form">
+              <label class="field-label" for="login-email">Work email</label>
+              <div class="input-wrap">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2"></rect><path d="m4.5 7 7.5 5.5L19.5 7"></path></svg>
+                </span>
+                <input id="login-email" name="email" type="email" autocomplete="username" placeholder="you@company.com" required>
+              </div>
+
+              <div class="label-row">
+                <label class="field-label" for="login-password">Password</label>
+              </div>
+              <div class="input-wrap">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="4.5" y="10" width="15" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><path d="M12 14v2"></path></svg>
+                </span>
+                <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+                <button class="password-toggle" type="button" data-password-target="login-password" aria-label="Show password" aria-pressed="false">SHOW</button>
+              </div>
+
+              <button class="submit-button" type="submit">Sign in <span aria-hidden="true">→</span></button>
+              <p class="form-status" id="login-status" role="status" aria-live="polite"></p>
+            </form>
+
+            <p class="switch-prompt">New to Hope ERP? <button class="text-button" type="button" data-view="create">Create an account</button></p>
+          </section>
+
+          <section class="auth-panel" id="create-panel" aria-labelledby="create-title" hidden>
+            <header class="form-header">
+              <button class="back-button" type="button" data-view="login"><span aria-hidden="true">←</span> Back to sign in</button>
+              <h2 id="create-title">Create your account</h2>
+              <p>Set up your profile to join your workspace.</p>
+            </header>
+
+            <form id="create-form">
+              <label class="field-label" for="create-name">Full name</label>
+              <div class="input-wrap">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg>
+                </span>
+                <input id="create-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+              </div>
+
+              <label class="field-label" for="create-email">Work email</label>
+              <div class="input-wrap">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2"></rect><path d="m4.5 7 7.5 5.5L19.5 7"></path></svg>
+                </span>
+                <input id="create-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
+              </div>
+
+              <label class="field-label" for="create-password">Create password</label>
+              <div class="input-wrap">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="4.5" y="10" width="15" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><path d="M12 14v2"></path></svg>
+                </span>
+                <input id="create-password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" minlength="8" required>
+                <button class="password-toggle" type="button" data-password-target="create-password" aria-label="Show password" aria-pressed="false">SHOW</button>
+              </div>
+
+              <label class="field-label" for="confirm-password">Confirm password</label>
+              <div class="input-wrap">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="4.5" y="10" width="15" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><path d="M12 14v2"></path></svg>
+                </span>
+                <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" placeholder="Enter your password again" required>
+                <button class="password-toggle" type="button" data-password-target="confirm-password" aria-label="Show password" aria-pressed="false">SHOW</button>
+              </div>
+
+              <button class="submit-button" type="submit">Create account <span aria-hidden="true">→</span></button>
+              <p class="form-status" id="create-status" role="status" aria-live="polite"></p>
+            </form>
+
+            <p class="switch-prompt">Already have an account? <button class="text-button" type="button" data-view="login">Sign in</button></p>
+          </section>
+
+          <p class="demo-note">Front-end demo — connect an authentication service to enable sign-in and account creation.</p>
+        </div>
+
+        <footer class="auth-footer"><span>© 2026 Hope ERP</span><span>Made for better workdays <span class="footer-heart" aria-hidden="true">♥</span></span></footer>
+      </main>
+    </div>
+  </body>
+</html>
     <meta name="theme-color" content="#10233f">
     <title>Sign in | Hope ERP</title>
     <link rel="stylesheet" href="CSS/homepage.css">
@@ -57,3 +227,4 @@
     </main>
   </body>
 </html>
+
