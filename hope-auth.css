@@ -502,6 +502,12 @@ button {
   box-shadow: 0 8px 16px rgba(66, 104, 232, 0.24);
 }
 
+.submit-button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+  transform: none;
+}
+
 .submit-button:active {
   transform: translateY(0);
 }
@@ -523,6 +529,12 @@ button {
   border: 1px solid #d6f1e5;
   padding: 10px 12px;
   background: #f0fbf6;
+}
+
+.form-status--error:not(:empty) {
+  border-color: #f2d3d3;
+  background: #fff5f5;
+  color: #a53d3d;
 }
 
 .switch-prompt {
